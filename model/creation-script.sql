@@ -1,0 +1,2 @@
+CREATE TABLE `back-and`.`clientes` (`id` INT(10) NOT NULL AUTO_INCREMENT , `nome` VARCHAR(255) NOT NULL , `sobrenome` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `idade` INT(3) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `back-and`.`produtos` (`id` INT(10) NOT NULL AUTO_INCREMENT , `nome` VARCHAR(255) NOT NULL , `descricao` VARCHAR(255) NOT NULL , `preco` DECIMAL(8, 2) NOT NULL , `data_atualizada` DATE NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
