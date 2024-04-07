@@ -7,12 +7,6 @@ const sobrenomeMiddleware = require('../middlewares/sobrenomeMiddleware');
 const idadeMiddleware = require('../middlewares/idadeMiddleware');
 
 
- /* POST clientes*/
- router.post('/', nomeMiddleware.validateName,
- sobrenomeMiddleware.validateFamilyName,
- idadeMiddleware.validateAge,
- clienteController.save,
- );
 
 /* GET roda da cliente listing. */
 router.get('/', clienteController.findAll);
@@ -21,7 +15,7 @@ router.get('/', clienteController.findAll);
 router.put('/', clienteController.update);
 
 /* POST roda da cliente listing. */
-router.post('/', clienteController.save);
+router.post('/',nomeMiddleware.validateName,sobrenomeMiddleware.validateFamilyName,idadeMiddleware.validateAge,clienteController.save,);
 
 /* DELETE roda da cliente listing. */
 router.delete('/:id', clienteController.remove);
