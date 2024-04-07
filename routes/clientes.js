@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 const clienteController = require('../controllers/clienteController');
-const nomeMiddleware = require('../middlewares/nomeMiddleware');
-const sobrenomeMiddleware = require('../middlewares/sobrenomeMiddleware');
-const idadeMiddleware = require('../middlewares/idadeMiddleware');
+const nomeMiddleware = require('../middlewares/middlewareClientes/nomeMiddleware');
+const sobrenomeMiddleware = require('../middlewares/middlewareClientes/sobrenomeMiddleware');
+const idadeMiddleware = require('../middlewares/middlewareClientes/idadeMiddleware');
 
 
 
