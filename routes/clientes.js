@@ -5,19 +5,25 @@ const clienteController = require('../controllers/clienteController');
 const nomeMiddleware = require('../middlewares/middlewareClientes/nomeMiddleware');
 const sobrenomeMiddleware = require('../middlewares/middlewareClientes/sobrenomeMiddleware');
 const idadeMiddleware = require('../middlewares/middlewareClientes/idadeMiddleware');
+const { validateCliente } = require('../middlewares/validation.middleware');
 
-
-
-/* GET roda da cliente listing. */
+/* GET rota da cliente listing. */
 router.get('/', clienteController.findAll);
 
-/* PUT roda da cliente listing. */
+/* PUT rota da cliente listing. */
 router.put('/', clienteController.update);
 
-/* POST roda da cliente listing. */
-router.post('/',nomeMiddleware.validateName,sobrenomeMiddleware.validateFamilyName,idadeMiddleware.validateAge,clienteController.save,);
+/* POST rota da cliente listing. */
+router.post(
+  '/',
+  nomeMiddleware.validateName,
+  sobrenomeMiddleware.validateFamilyName,
+  idadeMiddleware.validateAge,
+  validateCliente, 
+  clienteController.save,
+);
 
-/* DELETE roda da cliente listing. */
+/* DELETE rota da cliente listing. */
 router.delete('/:id', clienteController.remove);
 
 module.exports = router;
