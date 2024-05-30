@@ -1,6 +1,6 @@
 const clienteService = require('../services/clienteService');
 const NodeCache = require('node-cache');
-const cache = new NodeCache({ stdTTL: 30, checkperiod: 35 });
+const cache = new NodeCache({ stdTTL: 30, checkperiod: 30 });
 
 const findAll = async (request, response) => {
     const cacheKey = 'clientes_all';
